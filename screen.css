@@ -16,7 +16,7 @@ Integrity:  MTCC
 /* stylelint-disable*/
 a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{margin:0;padding:0;border:0;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section{display:block}html{line-height:1}body{line-height:inherit}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}table{border-collapse:collapse;border-spacing:0}
 
-a:link,a:visited{
+a:link,a:visited {
     text-decoration: none;
 }
 /* stylelint-enable */
@@ -76,8 +76,6 @@ h2{
   font-weight: 300;
   font-size: 1em;
   padding-top: 0.056em;
-}
-h2 {
   font-style: italic;
 }
 h3, h4 {
@@ -144,7 +142,7 @@ img {
 }
 #subheading-integrity {
   background-image: url("images/shield.png");
-  background-position: 1.618em;
+  background-position: 1.618em bottom;
   background-size: 10%;
   background-repeat: no-repeat;
 }
@@ -239,9 +237,6 @@ nav a:focus {
   h5 {
     text-align: left;
     padding-left: 23.608%;
-    font-size: 150%;
-    line-height: 1em;
-    font-size: 1.5em;
   }
   nav {
     padding-top: 0.618em;
@@ -254,14 +249,10 @@ nav a:focus {
   article ul li {
     padding-left: 1em;
   }
-  article ul li a {
-    font-weight: normal;
-    color: #FF9900;
-  }
   /*
     Layout Styles (usually ID selector)
   */
-  #why {           /* CONTAINER */
+  #why #content{           /* CONTAINER */
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto auto auto 1.618em auto auto 1.618em auto auto;
@@ -284,36 +275,36 @@ nav a:focus {
     padding-right: 3.375em;
   }
 
-  #leadership {
+  #integrity {
     grid-area: r2c2;
   }
-  #subheading-leadership {
-    grid-area: title1;
-    background-size: 10%;
-    background-position: 2.118em bottom;
-  }
-  #optional-imagery-for-leadership {
-    grid-area: r2c1;
-    align-self: stretch;
-    background-image: url("images/excelon-green-line.jpg");
-    background-size: cover;
-    background-position: center;
-  }
-
-  #integrity {
-    grid-area: r3c1;
-  }
   #subheading-integrity {
-    grid-area: title2;
+    grid-area: title1;
     background-size: 9%;
     background-position: 2.118em bottom;
   }
   #optional-imagery-for-integrity {
-    grid-area: r3c2;
+    grid-area: r2c1;
     align-self: stretch;
     background-image: url("images/mtcc-exterior-west.jpg");
     background-size: cover;
     background-position: right;
+  }
+
+  #leadership {
+    grid-area: r3c1;
+  }
+  #subheading-leadership {
+    grid-area: title2;
+    background-size: 10%;
+    background-position: 2.118em bottom;
+  }
+  #optional-imagery-for-leadership {
+    grid-area: r3c2;
+    align-self: stretch;
+    background-image: url("images/excelon-green-line.jpg");
+    background-size: cover;
+    background-position: center;
   }
 
   #social-responsibility {
@@ -368,32 +359,23 @@ nav a:focus {
     padding-right: 1.618em;
   }
   h3, h4 {
-    font-family: HelveticaNeue-Light, "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     padding-left: 0.618em;  /* Why isn't this alighned with h1? */
     padding-right: 0.618em;
   }
   h3 {
     padding-top: 2.618em;   /* 1.618/2 = 0.809*/
     padding-bottom: 2.618em;
-    text-align: center;
     font-size: 1.618em;
     line-height: 1em;
   }
   h4 {
-    padding-top: 0.5em;   /* 1em/2 = 0.5em */
-    font-family: Helvetica, sans-serif;
     font-size: 4.236em;
-    line-height: 1em;
     color: #CC0000;
   }
   h5 {
     font-size: 1.618em;
     line-height: 1.618em;
     padding-top: 5%;
-  }
-  p {
-    padding-left: 2.618em;
-    padding-right: 2.618em;
   }
   article ul li {
     padding-left: 1.618em;
@@ -426,9 +408,6 @@ nav a:focus {
   */
 }
 @media screen and (min-width: 1000px) {
-  h3 {
-    padding-top: 2.618em;
-  }
   h5 {
     padding-top: 6%;
   }
