@@ -94,7 +94,7 @@ h4 {
   padding-left: 0.618em;
   padding-right: 0.618em;
   font-family: Helvetica, sans-serif;
-  font-size: 2.118em;
+  font-size: 1.618em; //2.118em;
   line-height: 1em;
 }
 h5 {
@@ -167,7 +167,7 @@ nav li {
 nav a {
   padding: 0.6111111111em 0;
   background: #76777B; /*grey*/
-  color: #CC0000;
+  color: #CC0000; /*text: red*/
   border: 1px solid black;
   border-radius: .5em;
   display: block;
@@ -180,8 +180,8 @@ nav a {
 nav a:hover,
 nav a:active,
 nav a:focus {
-  background: green;    /* why doesn't this highlight the active section?*/
-  color: white;
+  background: #343536;    /* why doesn't this highlight the active section?*/
+  color: #FF9900;
 }
 
 .even-article,
