@@ -50,7 +50,7 @@ figcaption{
   font-size: 0;
 }
 */
-h1, h2, h3, h4, h5, p, ul {
+h1, h2, h3, h4, h5, p, article ul li {
   padding-left: 1.222em;
   padding-right: 1.222em;
 }
@@ -163,6 +163,15 @@ nav li {
   flex: 1 1 auto;
   float: left;
   width: 33.333333333%;
+  padding-left: 2%;  //for the padding between buttons
+  padding-right: 2%;
+}
+.far-left-button{
+  padding-left: 1.222em;  //for left edge padding
+}
+
+.far-right-button{
+  padding-right: 1.222em; //for right edge padding
 }
 nav a {
   padding: 0.6111111111em 0;
@@ -180,9 +189,13 @@ nav a {
 nav a:hover,
 nav a:active,
 nav a:focus {
-  background: #343536;    /* why doesn't this highlight the active section?*/
-  color: #FF9900;
+  background: #343536;
+  //color: #FF9900;
 }
+/*li{
+  padding-left: 1.222em;
+  padding-right: 1.222em;
+}*/
 
 .even-article,
 .odd-article {
@@ -337,6 +350,10 @@ nav a:focus {
     padding-top: 9%;
     padding-left: 19.0995%;
   }
+  nav li {
+    padding-left: 3%;  //for the padding between buttons
+    padding-right: 3%;
+  }
 }
 
 @media screen and (min-width: 900px) {
@@ -390,6 +407,18 @@ nav a:focus {
     max-width: 100%;
   }
 
+  nav li {
+    padding-left: 4%;  //for the padding between buttons
+    padding-right: 4%;
+  }
+  .far-left-button{
+    padding-left: 1.222em;  //for left edge padding
+  }
+
+  .far-right-button{
+    padding-right: 1.222em; //for right edge padding
+  }
+
   /*
     Layout Styles (usually ID selector)
   */
@@ -411,14 +440,26 @@ nav a:focus {
   h5 {
     padding-top: 6%;
   }
+  nav li {
+    padding-left: 5%;  //for the padding between buttons
+    padding-right: 5%;
+  }
 }
 @media screen and (min-width: 1100px) {
   h5 {
     padding-left: 16.591%;
   }
+  nav li {
+    padding-left: 6%;  //for the padding between buttons
+    padding-right: 6%;
+  }
 }
 @media screen and (min-width: 1200px) {
   h5 {
     padding-top: 7%;
+  }
+  nav li {
+    padding-left: 9%;  //for the padding between buttons
+    padding-right: 9%;
   }
 }
