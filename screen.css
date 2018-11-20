@@ -35,21 +35,20 @@ html {
 b {
   display: block;
 }
-body {
+#header { /*for the header on EVERY page (with the library image)*/
   position: relative;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-image: url("images/galvin-library-50.jpg");
-  height: 19em; /* Why doesn't 17.942em work, as recommended by Modular Design?*/
+  height: 100%;
   color: #131415;
 }
-/*
-figcaption{
-  opacity: 0;
-  font-size: 0;
+#how body, #contact body {
+  background-image: url("images/connectwork-40.png");
+  background-position: center;
+  background-repeat: repeat;
 }
-*/
 h1, h2, h3, h4, h5, p, article ul li {
   padding-left: 8%;
   padding-right: 8%;
@@ -67,8 +66,6 @@ h1, h4 {
 }
 h1 {
   padding-top: 3.8315em; /* 75% between 4.236 and 2.618em */
-  //padding-left: 0.618em;
-  //padding-right: 0.618em;
   font-size: 2.118em;
   line-height: 1em;
 }
@@ -91,27 +88,24 @@ h3 {
 }
 h4 {
   padding-top: 0.5em;   /* 1em/2 = 0.5em */
-  //padding-left: 0.618em;
-  //padding-right: 0.618em;
   font-family: Helvetica, sans-serif;
-  font-size: 1.618em; //2.118em;
+  font-size: 161.805%;
   line-height: 1em;
 }
 h5 {
   color: #FF9900;
   padding-left: 23.608%;
   padding-top: 9%;
-  font-size: 150%;
+  font-size: 161.805%;
   line-height: 1em;
 }
-/*header{
-  border-bottom: solid #4B4C4E;
-}*/
 
 article ul li a {
   color: #CC0000;
   font-weight: bold;
 }
+
+
 
 /* Resize the section figures */
 figure {
@@ -192,15 +186,11 @@ nav a:focus {
   background: #343536;
   //color: #FF9900;
 }
-/*li{
-  padding-left: 1.222em;
-  padding-right: 1.222em;
-}*/
 
-/*.even-article,
+.even-article,
 .odd-article {
-  border-bottom: solid #4B4C4E;
-}*/
+  border-top: solid #4B4C4E;
+}
 .odd-article {
   color: #f1f1f1;   /*text color, slightly grey*/
   background-image: url("images/connectwork-40.png");
@@ -209,6 +199,10 @@ nav a:focus {
 }
 .even-article {
   background-color: #e3e3e4;
+}
+#how article,   /*instead of odd-article*/
+#contact article {
+  border-top: solid #4B4C4E;
 }
 
 /*
@@ -219,15 +213,6 @@ nav a:focus {
 
 
 /*------------------------------------------------------------------------------------------------*/
-@media screen and (min-width: 442px) {
-  h2 {
-    //padding-top: 1.5em;
-  }
-  h5 {
-    padding-left: 19.0995%;
-  }
-}
-
 @media screen and (min-width: 535px) {
   h3 {
     padding-top: 2.618em;
@@ -240,60 +225,31 @@ nav a:focus {
     font-size: 3.375em;
     padding-top: 1em;
   }
-  h2 {
-    padding-top: 1em;
-    //padding-left: 2.118em;  /* halfway between 1.618 and 2.618 */
-  }
-  h4 {
-    //padding-left: 1.118em;
-  }
   h5 {
     text-align: left;
-    //padding-left: 23.608%;
   }
   nav {
     padding-top: 0.618em;
-    //font-size: 1.618em;
-  }
-  p {
-    //padding-left: 2.118em;
-    //padding-right: 2.118em;
-  }
-  article ul li {
-    padding-left: 1em;
   }
   /*
     Layout Styles (usually ID selector)
   */
-  #why #grid-container{           /* CONTAINER */
+  #why #integrity{           /* GRID CONTAINER */
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: /*auto*/ auto auto 1.618em auto auto 1.618em auto auto;
+    grid-template-rows: /*auto*/ auto auto 1.618em;
     grid-template-areas:
       /*"header header header"*/
       ". title1 title1"
       "r2c1 r2c2 r2c2"
-      ". r2c2 r2c2"
-      "title2 title2 ."
-      "r3c1 r3c1 r3c2"
-      "r3c1 r3c1 ."
-      ". title3 title3"
-      "r4c1 r4c2 r4c2";
+      ". r2c2 r2c2";
   }
-  /*#why-introduction {
-    grid-area: header;
-  }
-  #why-introduction p {
-    padding-left: 3.375em;
-    padding-right: 3.375em;
-  }*/
-
   #subheading-integrity {
     grid-area: title1;
     background-size: 9%;
     background-position: 2.118em bottom;
   }
-  #integrity {
+  #content-integrity {
     grid-area: r2c2;
   }
   #optional-imagery-for-integrity {
@@ -304,12 +260,22 @@ nav a:focus {
     background-position: right;
   }
 
+  #why #leadership{           /* GRID CONTAINER */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: /*auto*/ auto auto 1.618em;
+    grid-template-areas:
+      /*"header header header"*/
+      "title2 title2 ."
+      "r3c1 r3c1 r3c2"
+      "r3c1 r3c1 .";
+  }
   #subheading-leadership {
     grid-area: title2;
     background-size: 10%;
     background-position: 2.118em bottom;
   }
-  #leadership {
+  #content-leadership {
     grid-area: r3c1;
   }
   #optional-imagery-for-leadership {
@@ -320,12 +286,22 @@ nav a:focus {
     background-position: center;
   }
 
+  #why #social-responsibility{           /* GRID CONTAINER */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: /*auto*/ auto auto 1.618em;
+    grid-template-areas:
+      /*"header header header"*/
+      ". title3 title3"
+      "r4c1 r4c2 r4c2"
+      "r4c1 r4c2 r4c2";
+  }
   #subheading-social-resp {
     grid-area: title3;
     background-size: 10%;
     background-position: 2.118em bottom;
   }
-  #social-responsibility {
+  #content-social-responsibility {
     grid-area: r4c2;
   }
   #optional-imagery-for-social-resp {
@@ -355,15 +331,11 @@ nav a:focus {
     padding-right: 3%;
     font-size: 135%;
   }
-  h1, h2, h3, h4, h5, p, article ul li {  /*shoot for 45-90 chars per line*/
-    /*padding-left: 10%;
-    padding-right: 10%;*/
-  }
 }
 
 @media screen and (min-width: 800px) {
   p, h2, h3 {
-    font-size: 115%;
+    font-size: 114.591%;
   }
 }
 
@@ -386,12 +358,6 @@ nav a:focus {
     font-weight: 300;
     font-size: 150%;
     padding-top: 0.618em;
-    //padding-left: 1.618em;  /* How can I align this with h1? */
-    //padding-right: 1.618em;
-  }
-  h3, h4 {
-    //padding-left: 0.618em;  /* Why isn't this alighned with h1? */
-    //padding-right: 0.618em;
   }
   h3 {
     padding-top: 2.618em;   /* 1.618/2 = 0.809*/
@@ -400,20 +366,13 @@ nav a:focus {
     line-height: 1em;
   }
   h4 {
-    font-size: 4.236em;
+    font-size: 261.792%;
     color: #CC0000;
   }
   h5 {
-    font-size: 1.618em;
+    font-size: 200%;
     line-height: 1.618em;
     padding-top: 5%;
-  }
-  article ul li {
-    padding-left: 1.618em;
-  }
-  p {
-    //padding-left: 10%;
-    //padding-right: 10%;
   }
   /*
     Responsive image design
@@ -423,18 +382,6 @@ nav a:focus {
     margin-left: none;
     margin-right: none;
     max-width: 100%;
-  }
-
-  nav li {
-    //padding-left: 4%;  //for the padding between buttons
-    //padding-right: 4%;
-  }
-  .far-left-button{
-    //padding-left: 1.222em;  //for left edge padding
-  }
-
-  .far-right-button{
-    //padding-right: 1.222em; //for right edge padding
   }
 
   /*
