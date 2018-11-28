@@ -54,14 +54,14 @@ b {
 .single-article .content {
   border-top: solid #4B4C4E;
 }
-h1, h2, h3, h4, h5, p, article ul li {
+h1, h2, h3, h4, h5, p, article ul li, figcaption {
   padding-left: 8%;
   padding-right: 8%;
 }
 h1, h2, h3, h4, h5, nav {
   font-weight: bold;
 }
-p {
+p, figcaption {
   padding-top: 0.809em; /* 1.618/2 = 0.809 */
   padding-bottom: 0.809em;
 }
@@ -113,7 +113,7 @@ article ul li a, article p a {
 
 
 /* Resize the section figures */
-figure {
+/*figure {
   padding-top: 1em;
   display: block;
   margin-left: auto;
@@ -125,10 +125,39 @@ figure {
 */
 img {
   display: block;
-  margin-left: none;
-  margin-right: none;
   max-width: 100%;
 }
+/* Image Gallery */
+.gallery .images {
+  background: #222;
+  display: flex;
+  flex-flow: row wrap-reverse;
+  padding: 5px;
+}
+.gallery .images li {
+  flex: 1 1 600px;
+  padding: 5px;
+}
+/* State Styles */
+.slideshow li {
+  display: none;
+}
+.slideshow li.is-showing {
+  display: block;
+}
+/* Responsive Image Sizes */
+/*
+                        @1x    @2x
+                        305px   610px;
+Up to 629px viewport:   610px  1220px
+At a 630px viewport:    300px   600px
+                        380px   760px;
+Up to a 939px viewport: 455px   910px
+At a 940px viewport:    300px   600px
+
+Starter image sizes:
+1220, 800, 650, 380
+*/
 
 /*
   Layout Styles (usually ID selector)
@@ -338,7 +367,7 @@ nav a:focus {
 }
 
 @media screen and (min-width: 800px) {
-  p, h2, h3, article ul li {
+  p, h2, h3, article ul li, figcaption {
     font-size: 114.591%;
   }
 }
@@ -422,7 +451,7 @@ nav a:focus {
     padding-left: 6%;  /*for the padding between buttons*/
     padding-right: 6%;
   }
-  p, article ul li {
+  p, article ul li, figcaption {
     font-size: 135%;
   }
 }
@@ -434,7 +463,10 @@ nav a:focus {
     padding-left: 9%;  /*for the padding between buttons*/
     padding-right: 9%;
   }
-  p {
+  p, figcaption {
     font-size: 150%;
   }
+  /*.gallery .images li {
+    flex: 1 0 350px;
+  }*/
 }
