@@ -44,13 +44,25 @@ b {
   height: 100%;
   color: #131415;
 }
-/*#how body, #contact body, #rover body*/
+#rover #header {
+  background-image: none;
+}
+/*#how body, #contact body*/
 .single-article body {
   background-image: url("images/connectwork-40.png");
   background-position: center;
   background-repeat: repeat;
   color: #f1f1f1;   /*text color, slightly grey*/
 }
+
+
+
+#rover {
+  background-image: url("rover/rover-background.png");
+}
+
+
+
 .single-article .content {
   border-top: solid #4B4C4E;
 }
@@ -360,8 +372,6 @@ nav a:focus {
     padding-left: 19.0995%;
   }
   nav li {
-    padding-left: 3%;  /*for the padding between buttons*/
-    padding-right: 3%;
     font-size: 135%;
   }
 }
@@ -438,18 +448,10 @@ nav a:focus {
   h5 {
     padding-top: 6%;
   }
-  nav li {
-    padding-left: 5%;  /*for the padding between buttons*/
-    padding-right: 5%;
-  }
 }
 @media screen and (min-width: 1100px) {
   h5 {
     padding-left: 16.591%;
-  }
-  nav li {
-    padding-left: 6%;  /*for the padding between buttons*/
-    padding-right: 6%;
   }
   p, article ul li, figcaption {
     font-size: 135%;
@@ -458,10 +460,6 @@ nav a:focus {
 @media screen and (min-width: 1200px) {
   h5 {
     padding-top: 7%;
-  }
-  nav li {
-    padding-left: 9%;  /*for the padding between buttons*/
-    padding-right: 9%;
   }
   p, figcaption {
     font-size: 150%;
