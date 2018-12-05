@@ -55,7 +55,6 @@ h1 {
   line-height: 1em;
   padding-bottom: 0.618em;
   text-align: center;
-  //text-shadow: 2px 2px 5px #fffff2;
 }
 h2 {
   color: #fffff2;
@@ -149,7 +148,6 @@ nav a:focus {
   background: #343536;
 }
 
-
 /*
   State Styles (media queries and javascript dependent stuff
 */
@@ -159,7 +157,7 @@ nav a:focus {
 
 /*------------------------------------------------------------------------------------------------*/
 @media screen and (min-width: 450px) {
-  p, figcaption{
+  p, figcaption {
     line-height: 130.9%;
   }
 }
