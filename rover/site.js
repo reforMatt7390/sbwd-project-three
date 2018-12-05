@@ -6,7 +6,7 @@
   // Replace the gallery class with slideshow
   slideshow.className = 'slideshow';
   var figcaption = slideshow.querySelector('figcaption');
-  figcaption.innerHTML += '<b>Click or tap image to see more.</b>';
+  figcaption.innerHTML += '<b>Click or tap the image to see more.</b>';
   // Grab all the slides -- that is, the list items
   var slides = slideshow.querySelectorAll('li');
   console.log(slides.length, 'slides');
