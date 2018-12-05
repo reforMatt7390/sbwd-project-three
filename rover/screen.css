@@ -1,0 +1,420 @@
+/*Rover Colors
+  Dark Green = #24a160
+  Light Green = #2ab56f
+  */
+
+/* RESET CSS */
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+/* stylelint-disable*/
+a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{margin:0;padding:0;border:0;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section{display:block}html{line-height:1}body{line-height:inherit}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}table{border-collapse:collapse;border-spacing:0}
+
+a:link,a:visited {
+    text-decoration: none;
+}
+/* stylelint-enable */
+
+/* Begin site styles below */
+
+/*
+Base styles (also the styles for smartphones, portrait... need to implement landscape!
+*/
+html {
+  font-family: Helvetica, sans-serif;
+  font-size: 1.125em; /* target / context = 18px / 16px = 1.125 em */
+  line-height: 1.222em; /* 1.22em instead of 120%... from 22px (rounded up)*/
+}
+/*ModularScale.com "golden section" 1:1.618*/
+#header { /*for the header on EVERY page (with the library image)*/
+  position: relative;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("img/rover-background-official.jpg");
+  height: 100%;
+  color: #131415;
+}
+h1, h2, h3, h4, h5, p, article ul li, figcaption {
+  padding-left: 8%;
+  padding-right: 8%;
+}
+h1, h2, h3, h4, h5 {
+  font-weight: bold;
+}
+
+h1 {
+  line-height: 1em;
+  padding-bottom: 0.618em;
+  font-size: 161.8%;
+}
+
+
+p, figcaption {
+  padding-top: 0.809em; /* 1.618/2 = 0.809 */
+  padding-bottom: 0.809em;
+}
+h1 {
+  color: #fffff2; /*text = off white*/
+  text-align: center;
+  //text-shadow: 2px 2px 5px #fffff2;
+}
+h3, h4 {
+  font-family: HelveticaNeue-Light, "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+h3 {
+  font-size: 1em;
+  font-style: italic;
+  padding-top: 1.618em;
+  padding-bottom: 1.618em;
+  text-align: center;
+  color: #DBDBDD;
+}
+h4 {
+  padding-top: 0.5em;   /* 1em/2 = 0.5em */
+  font-family: Helvetica, sans-serif;
+  font-size: 130.9%;
+  line-height: 1em;
+}
+h5 {
+  color: #FF9900;
+  padding-left: 23.608%;
+  padding-top: 9%;
+  font-size: 161.805%;
+  line-height: 1em;
+}
+
+article ul li a, article p a {
+  color: #CC0000;
+  font-weight: bold;
+}
+
+
+
+/* Resize the section figures */
+/*figure {
+  padding-top: 1em;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 4.236em;
+}
+/*
+  Responsive image design
+*/
+img {
+  display: block;
+  max-width: 100%;
+}
+/* Image Gallery */
+.gallery .images {
+  background: #222;
+  display: flex;
+  flex-flow: row wrap-reverse;
+  padding: 5px;
+}
+.gallery .images li {
+  flex: 1 1 600px;
+  padding: 5px;
+}
+/* State Styles */
+.slideshow li {
+  display: none;
+}
+.slideshow li.is-showing {
+  display: block;
+}
+/* Responsive Image Sizes */
+/*
+                        @1x    @2x
+                        305px   610px;
+Up to 629px viewport:   610px  1220px
+At a 630px viewport:    300px   600px
+                        380px   760px;
+Up to a 939px viewport: 455px   910px
+At a 940px viewport:    300px   600px
+
+Starter image sizes:
+1220, 800, 650, 380
+*/
+
+/*
+  Layout Styles (usually ID selector)
+*/
+
+
+/*
+  Module Styles (usually class selectors)
+*/
+nav ul {
+  display: flex;
+}
+nav li {
+  flex: 1 1 auto;
+  float: left;
+  width: 33.333333333%;
+  padding-left: 2%;  /*for the padding between buttons*/
+  padding-right: 2%;
+}
+.far-left-button {
+  padding-left: 8%;  /*for left edge padding*/
+}
+.far-right-button {
+  padding-right: 8%; /*for right edge padding*/
+}
+nav a {
+  padding: 0.6111111111em 0;
+  background: #2ab56f;
+  color: #fffff2; /*text = off white*/
+  border: 1px solid black;
+  border-radius: 0.5em;
+  display: block;
+  text-align: center;
+}
+#who #nav-who,
+#why #nav-why,
+#how #nav-how,
+#contact #nav-contact,
+nav a:hover,
+nav a:active,
+nav a:focus {
+  background: #343536;
+}
+
+.even-article,
+.odd-article {
+  border-top: solid #4B4C4E;
+}
+.odd-article {
+  color: #f1f1f1;   /*text color, slightly grey*/
+  background-image: url("images/connectwork-40.png");
+  background-position: center;
+  background-repeat: repeat;
+}
+.even-article {
+  background-color: #e3e3e4;
+}
+#how article,   /*instead of odd-article*/
+#contact article {
+  /*border-top: solid #4B4C4E;*/
+}
+
+/*
+  State Styles (media queries and javascript dependent stuff
+*/
+
+
+
+
+/*------------------------------------------------------------------------------------------------*/
+@media screen and (min-width: 535px) {
+  h3 {
+    padding-top: 2.618em;
+    padding-bottom: 2.618em;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  h1 {
+    font-size: 3.375em;
+    padding-top: 1em;
+  }
+  h5 {
+    text-align: left;
+  }
+  nav {
+    padding-top: 0.618em;
+  }
+  /*
+    Layout Styles (usually ID selector)
+  */
+  #why #integrity {           /* GRID CONTAINER */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: /*auto*/ auto auto 1.618em;
+    grid-template-areas:
+      /*"header header header"*/
+      ". title1 title1"
+      "r2c1 r2c2 r2c2"
+      ". r2c2 r2c2";
+  }
+  #subheading-integrity {
+    grid-area: title1;
+    background-size: 9%;
+    background-position: 2.118em bottom;
+  }
+  #content-integrity {
+    grid-area: r2c2;
+  }
+  #optional-imagery-for-integrity {
+    grid-area: r2c1;
+    align-self: stretch;
+    background-image: url("images/mtcc-exterior-west.jpg");
+    background-size: cover;
+    background-position: right;
+  }
+
+  #why #leadership {           /* GRID CONTAINER */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: /*auto*/ auto auto 1.618em;
+    grid-template-areas:
+      /*"header header header"*/
+      "title2 title2 ."
+      "r3c1 r3c1 r3c2"
+      "r3c1 r3c1 .";
+  }
+  #subheading-leadership {
+    grid-area: title2;
+    background-size: 10%;
+    background-position: 2.118em bottom;
+  }
+  #content-leadership {
+    grid-area: r3c1;
+  }
+  #optional-imagery-for-leadership {
+    grid-area: r3c2;
+    align-self: stretch;
+    background-image: url("images/excelon-green-line.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+
+  #why #social-responsibility {           /* GRID CONTAINER */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: /*auto*/ auto auto 1.618em;
+    grid-template-areas:
+      /*"header header header"*/
+      ". title3 title3"
+      "r4c1 r4c2 r4c2"
+      "r4c1 r4c2 r4c2";
+  }
+  #subheading-social-resp {
+    grid-area: title3;
+    background-size: 10%;
+    background-position: 2.118em bottom;
+  }
+  #content-social-responsibility {
+    grid-area: r4c2;
+  }
+  #optional-imagery-for-social-resp {
+    grid-area: r4c1;
+    align-self: stretch;
+    background-image: url("images/msv-exterior-ethan-castro.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+@media screen and (min-width: 704px) {
+  h1 {
+    font-size: 3.375em;
+    padding-top: 1.618em;
+  }
+  h3 {
+    padding-top: 3.375em;
+    padding-bottom: 3.375em;
+  }
+  h5 {
+    padding-top: 9%;
+    padding-left: 19.0995%;
+  }
+  nav li {
+    font-size: 135%;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  p, h2, h3, article ul li, figcaption {
+    font-size: 114.591%;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  /* default stuff... like for normal screen sizes */
+  html {
+    line-height: 1.618em;
+  }
+  h1 {
+    padding-top: 10%;   /* half-way between 4.236 and 2.118 */
+    font-size: 4.236em;
+  }
+  h2, nav {
+    font-family: HelveticaNeue-Light, "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  }
+  nav li {
+    font-size: 150%;
+  }
+  h2 {
+    font-weight: 300;
+    font-size: 150%;
+    padding-top: 0.618em;
+  }
+  h3 {
+    padding-top: 2.618em;   /* 1.618/2 = 0.809*/
+    padding-bottom: 2.618em;
+    font-size: 1.618em;
+    line-height: 1em;
+  }
+  h4 {
+    font-size: 261.792%;
+    color: #CC0000;
+  }
+  h5 {
+    font-size: 200%;
+    line-height: 1.618em;
+    padding-top: 5%;
+  }
+  /*
+    Responsive image design
+  */
+  img {
+    display: block;
+    margin-left: none;
+    margin-right: none;
+    max-width: 100%;
+  }
+
+  /*
+    Layout Styles (usually ID selector)
+  */
+  #who {
+    background-size: 100%;
+  }
+  #how {
+    background-size: 100%;
+  }
+  /*
+    Module Styles (usually class selectors)
+  */
+
+  /*
+    State Styles (media queries and javascript dependent stuff
+  */
+}
+@media screen and (min-width: 1000px) {
+  h5 {
+    padding-top: 6%;
+  }
+}
+@media screen and (min-width: 1100px) {
+  h5 {
+    padding-left: 16.591%;
+  }
+  p, article ul li, figcaption {
+    font-size: 135%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  h5 {
+    padding-top: 7%;
+  }
+  p, figcaption {
+    font-size: 150%;
+  }
+  /*.gallery .images li {
+    flex: 1 0 350px;
+  }*/
+}
