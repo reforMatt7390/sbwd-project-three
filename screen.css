@@ -31,6 +31,9 @@ html {
   font-size: 1.125em; /* target / context = 18px / 16px = 1.125 em */
   line-height: 1.222em; /* 1.22em instead of 120%... from 22px (rounded up)*/
 }
+#rover body {
+  background-color: #24a160; /* Rover, dark green */
+}
 /*ModularScale.com "golden section" 1:1.618*/
 b {
   display: block;
@@ -45,7 +48,7 @@ b {
   color: #131415;
 }
 #rover #header {
-  background-image: none;
+  background-image: url("images/rover-images/rover-background-official.jpg");
 }
 /*#how body, #contact body*/
 .single-article body {
@@ -54,28 +57,22 @@ b {
   background-repeat: repeat;
   color: #f1f1f1;   /*text color, slightly grey*/
 }
-
-
-
-#rover {
-  background-image: url("rover/rover-background.png");
-}
-
-
-
 .single-article .content {
   border-top: solid #4B4C4E;
 }
-h1, h2, h3, h4, h5, p, article ul li, figcaption {
+h1, h2, h3, h4, h5, h6, p, article ul li, figcaption {
   padding-left: 8%;
   padding-right: 8%;
 }
-h1, h2, h3, h4, h5, nav {
+h1, h2, h3, h4, h5, h6, nav {
   font-weight: bold;
 }
 p, figcaption {
   padding-top: 0.809em; /* 1.618/2 = 0.809 */
   padding-bottom: 0.809em;
+}
+#rover p, #rover figcaption {
+  color: #fffff2;
 }
 h1, h4 {
   color: #CC0000;
@@ -86,11 +83,24 @@ h1 {
   font-size: 2.118em;
   line-height: 1em;
 }
+#rover h1 {
+  color: #fffff2; /*text = off white*/
+  font-size: 161.8%;
+  padding-bottom: 0.618em;
+  text-align: center;
+}
 h2 {
   font-weight: 300;
   font-size: 1em;
   padding-top: 0.056em;
   font-style: italic;
+}
+#rover h6 {
+  color: #fffff2;
+  font-family: Helvetica, sans-serif;
+  font-size: 130.9%;
+  padding-top: 0.5em;
+  line-height: 1em;
 }
 h3, h4 {
   font-family: HelveticaNeue-Light, "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
@@ -121,9 +131,19 @@ article ul li a, article p a {
   color: #CC0000;
   font-weight: bold;
 }
-
-
-
+#rover article p a {
+  color: #272b2e; /*text = near black*/
+  font-weight: bold;
+}
+#rover article { /*how do I make the background span the figcaption and javascript?*/
+  position: relative;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("images/rover-images/rover-background.png");
+  height: 100%;
+  color: #131415;
+}
 /* Resize the section figures */
 /*figure {
   padding-top: 1em;
@@ -139,37 +159,6 @@ img {
   display: block;
   max-width: 100%;
 }
-/* Image Gallery */
-.gallery .images {
-  background: #222;
-  display: flex;
-  flex-flow: row wrap-reverse;
-  padding: 5px;
-}
-.gallery .images li {
-  flex: 1 1 600px;
-  padding: 5px;
-}
-/* State Styles */
-.slideshow li {
-  display: none;
-}
-.slideshow li.is-showing {
-  display: block;
-}
-/* Responsive Image Sizes */
-/*
-                        @1x    @2x
-                        305px   610px;
-Up to 629px viewport:   610px  1220px
-At a 630px viewport:    300px   600px
-                        380px   760px;
-Up to a 939px viewport: 455px   910px
-At a 940px viewport:    300px   600px
-
-Starter image sizes:
-1220, 800, 650, 380
-*/
 
 /*
   Layout Styles (usually ID selector)
@@ -222,6 +211,10 @@ nav a {
   display: block;
   text-align: center;
 }
+#rover nav a {
+  background: #2ab56f;
+  color: #fffff2; /*text = off white*/
+}
 #who #nav-who,
 #why #nav-why,
 #how #nav-how,
@@ -245,9 +238,22 @@ nav a:focus {
 .even-article {
   background-color: #e3e3e4;
 }
-#how article,   /*instead of odd-article*/
-#contact article {
-  /*border-top: solid #4B4C4E;*/
+#rover .gallery .images {
+  background: #222;
+  display: flex;
+  flex-flow: row wrap-reverse;
+  padding: 5px;
+}
+#rover .gallery .images li {
+  flex: 1 1 600px;
+  padding: 5px;
+}
+/* State Styles */
+#rover .slideshow li {
+  display: none;
+}
+#rover .slideshow li.is-showing {
+  display: block;
 }
 
 /*
@@ -258,6 +264,12 @@ nav a:focus {
 
 
 /*------------------------------------------------------------------------------------------------*/
+@media screen and (min-width: 450px) {
+  #rover p, #rover figcaption {
+    line-height: 130.9%;
+  }
+}
+
 @media screen and (min-width: 535px) {
   h3 {
     padding-top: 2.618em;
@@ -270,11 +282,20 @@ nav a:focus {
     font-size: 3.375em;
     padding-top: 1em;
   }
+  #rover h1 {
+    font-size: 216.8%;
+    }
   h5 {
     text-align: left;
   }
+  #rover h6 {
+    font-size: 161.8%;
+  }
   nav {
     padding-top: 0.618em;
+  }
+  #rover p, figcaption {
+    font-size: 110%;
   }
   /*
     Layout Styles (usually ID selector)
@@ -374,6 +395,9 @@ nav a:focus {
   nav li {
     font-size: 135%;
   }
+  #rover p, figcaption {
+    line-height: 161.8%;
+  }
 }
 
 @media screen and (min-width: 800px) {
@@ -397,9 +421,9 @@ nav a:focus {
   nav li {
     font-size: 150%;
   }
-  h2 {
-    font-weight: 300;
-    font-size: 150%;
+  #rover h6 {
+    //font-weight: 500;
+    font-size: 186.8%;
     padding-top: 0.618em;
   }
   h3 {
@@ -416,6 +440,12 @@ nav a:focus {
     font-size: 200%;
     line-height: 1.618em;
     padding-top: 5%;
+  }
+  #rover h5 {
+    font-size: 261.792%;
+  }
+  #rover p, #rover figcaption {
+    font-size: 130.9%;
   }
   /*
     Responsive image design
@@ -464,7 +494,4 @@ nav a:focus {
   p, figcaption {
     font-size: 150%;
   }
-  /*.gallery .images li {
-    flex: 1 0 350px;
-  }*/
 }
